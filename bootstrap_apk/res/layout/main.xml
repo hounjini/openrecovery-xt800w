@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/logo"
+    >
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+					android:orientation="vertical"
+    android:paddingBottom="3dip"
+	android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingTop="130dip" android:paddingLeft="14dip" android:paddingRight="14dip">
+<TextView android:id="@+id/about" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_gravity="center_horizontal" android:bufferType="normal" android:textSize="32sp" android:text="XT800W Recovery" android:textStyle="bold"> </TextView>
+<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_vertical|center_horizontal|center" android:textSize="22sp" android:id="@+id/install" android:text="  Install  "></Button>
+<Button android:textSize="22sp" android:id="@+id/reboot_recovery" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal" android:text="Recovery" android:layout_marginTop="10dip" android:layout_marginBottom="10dip"></Button>
+<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/uninstall" android:text="Uninstall" android:layout_gravity="center_vertical|center_horizontal|center" android:textSize="22sp" ></Button>
+<TextView android:id="@+id/TextView01" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_gravity="right" android:gravity="right" android:layout_marginTop="5dip" android:textSize="15sp" android:text="헌진 / hounjini"></TextView>
+
+
+<TextView android:id="@+id/TextView02" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="hounjini@gmail.com" android:gravity="right" android:layout_gravity="right" android:textSize="15sp"></TextView>
+</LinearLayout>
+
+
+
+<TextView android:id="@+id/TextView03" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="bottom|right" android:text="Thanks to" android:layout_marginTop="10dip" android:layout_marginRight="14dip"></TextView>
+<TextView android:id="@+id/TextView04" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="bottom|right" android:text="Skrilax_CZ - OpenRecovery" android:layout_marginRight="14dip"></TextView>
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="right" android:gravity="bottom|right" android:id="@+id/TextView05" android:text="Androidiani - OpenRecovery MOD" android:layout_marginRight="14dip"></TextView>
+<TextView android:id="@+id/TextView06" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="14dip" android:layout_gravity="right" android:text="Tenfar - Defy Bootstrap Android APP"></TextView>
+
+</LinearLayout>

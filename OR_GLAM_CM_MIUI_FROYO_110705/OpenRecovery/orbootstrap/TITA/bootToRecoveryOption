@@ -1,0 +1,10 @@
+2
+1
+2
+----------------------------------------------------------------------------------------------------------
+The ordering is vibration, led, waitSeconds
+vibration   = how long vibrate when you can boot into recovery mode write in second. (ex, 2 means 2secs)
+led         = button back light on, when you can boot into recovery mode, (0 = off, 1 = on)
+waitSeconds = how long wait until decide boot into recovery mode or not. (in seconds, 2 means 2 secs)
+These options are must be written in line 1st, 2nd, 3rd each.
+

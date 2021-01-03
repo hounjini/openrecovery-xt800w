@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="reboot_recovery">리커버리!</string>
+    
+    
+
+<string name="app_name">XT800W_Recovery</string>
+</resources>

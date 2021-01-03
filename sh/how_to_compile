@@ -1,0 +1,82 @@
+1. download android source code and setting for compile it(setupt java)
+2. put source code to <ANDROID SOURCE CODE BASE>/system/core/sh/
+3. open terminal 
+4. type this
+
+cd <ANDROID SOURCE CODE BASE>
+source ./build/envsetup.sh
+mmm ./system/core/sh/
+
+Now, you will get a error message.
+Let's fix it.
+
+5. mkdir <ANDROID SOURCE CODE BASE>/out/target/product/generic/obj
+6. ln -s <ANDROID SOURCE CODE BASE>/prebuilt/ndk/android-ndk-r4/platforms/android-5/arch-arm/usr/lib <ANDROID SOURCE CODE BASE>/out/target/product/generic/obj/lib
+
+6. compile sh
+mmm ./system/core/sh/
+Error msg again.
+let's fix it.
+
+
+7. open <ANDROID SOURCE CODE BASE>/bionic/libc/include/signal.h
+goto 54th line,
+make extern const char * const sys_signame[]; to // extern const char * const sys_signame[];
+
+(If extract trap.c file from my archive, you don't need to do it)
+open <ANDROID SOURCE CODE BASE>/system/core/sh/trap.c
+
+add this
+
+const char *sys_signame[32] = {"SIGHUP", "SIGINT", "SIGQUIT", "SIGILL", "SIGTRAP", "SIGABRT", "SIGBUS", "SIGFPE", "SIGKILL", "SIGUSR1",\
+ "SIGSEGV", "SIGUSR2", "SIGPIPE", "SIGALRM", "SIGALRM", "SIGTERM", "SIGSTKFLT", "SIGCHLD", "SIGCHLD", "SIGCONT", "SIGSTOP", "SIGTSTP",\
+ "SIGTTIN", "SIGTTOU", "SIGURG", "SIGXCPU", "SIGXFSZ", "SIGVTALRM", "SIGPROF", "SIGWINCH", "SIGIO", "SIGPWR", "SIGSYS", "SIGINFO"};
+ 
+8. let's make it again.
+mmm ./system/core/sh/
+
+You got a error msg, again!!!
+Let's fix it. 
+
+9. compile libinenose
+mmm ./system/core/liblinenoise/
+
+10. let's make it again.
+mmm ./system/core/sh/
+
+You got a error msg, again!!!
+Let's fix it.
+
+11. compile acp
+mmm ./build/tools/acp/
+
+You got a error msg, again!!!
+Let's fix it.
+
+12. compile libhost
+mmm ./build/libs/host/
+
+13. recompile acp
+mmm ./build/tools/acp/
+
+14. recompile liblinenoise
+mmm ./system/core/liblinenoise/
+
+15. recompile sh
+mmm ./system/core/sh/
+
+16. okay, let's copy soslim file!
+cp <ANDROID SOURCE CODE BASE>/prebuilt/ndk/tools/linux/soslim <ANDROID SOURCE CODE BASE>/out/host/linux-x86/bin/soslim
+
+17. recompile sh
+mmm ./system/core/sh/
+
+18. let make a symlink.
+mkdir <ANDROID SOURCE CODE BASE>/out/target/product/generic/system
+ln -s <ANDROID SOURCE CODE BASE>/prebuilt/ndk/android-ndk-r4/platforms/android-5/arch-arm/usr/lib <ANDROID SOURCE CODE BASE>/out/target/product/generic/system/lib
+
+19 recompile sh
+mmm ./system/core/sh/
+
+finally, you got a ash binary
+it is placed in <ANDROID SOURCE CODE BASE>/out/target/product/generic/system/bin/ash
